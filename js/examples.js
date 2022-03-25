@@ -1,4 +1,4 @@
-// JS exercises.
+// JS examples
 // We will comment the code for every
 // excersize that isn't the one we want to check.
 
@@ -427,155 +427,35 @@ switch (parseInt(grade)) {
 }
 */
 
-// Exercises part 2 - LOOPS
+// LOOPS
 
-// EXERCISE 01
+//counting by one to one
+
+// WHILE
 /*
+let count = 0;
 
-let palindromo="palindrome";
-for (let charLoc = 0, count = 0; charLoc <=10; charLoc++, count++) {
-  console.log(`${count}. ${palindromo.charAt(charLoc-1)}`);  
+while (count <= 10) {
+  console.log(count);
+  count++;
 }
 */
 
-// EXERCISE 02
-/*
+//FOR
 
-let palindrome="no lemon, no melon";
-for (let charLoc = palindrome.length, count = 1; charLoc > 0; charLoc--, count++) {
-  console.log(`${count}. ${palindrome.charAt(charLoc-1)}`);  
+/*
+let end = 10;
+for (let start = 1; start <= end; start++) {
+  console.log(start + " out of " + end);
 }
 */
 
-//EXERCISE 03
-/*for (let start = 1; start < 5; start++) {
-  //console.log("****");
-  //console.log("*\n*\n*\n*");
-}*/
 
 /*
-for (let counter1 = 0; counter1 < 4; counter1++){ 
-  for (let counter2 = 0; counter2 < 4; counter2++) 
-      console.log(`${counter1+1}. ****`);
+let userValue = prompt("Please enter your value");
+
+for (let num = 1; num <=10; num++) {
+  console.log(`${userValue} x ${userValue} = ${userValue*num}`);  
 }
+
 */
-
-//EXERCISE 04
-/*
-for (let mo=22, tu=21, we=23, th=24, fr=18, sa=17, su=19, average, days; days < 5; days++) {
-  console.log("****");
-}
-*/
-
-/*
-let mo=22, tu=21, we=23, th=24, fr=18, sa=17, su=19;
-  console.log(`${Math.round((mo+tu+we+th+fr+sa+su)/7)}`)
-*/
-
-//EXERCISE 05
-/*
-
-let randNum = Math.floor(Math.random() * 10) + 1;
-let chances = 3;
-let userGuess = parseInt(prompt(`Try to guess a number between 1 and 10.`));
-while (chances > 0) {
-  if (userGuess == randNum) {
-    chances = 0;
-    alert("You win!");
-  } else if (userGuess != randNum && chances > 1) {
-    chances--;
-    userGuess = parseInt(prompt(`Wrong number! Try again! ${chances} chances left \n(Shh, it's ${randNum}, don't tell anybody)`));
-  } else {
-    chances = 0;
-    alert("Game Over");
-  }
-}
-*/
-
-//EXERCISE 6
-
-let chars = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()`;
-let chosenChars = "";
-let passLength = parseInt(
-  prompt(`How many characters will your password have? (Between 8 and 16)`)
-);
-let password = "";
-
-let withLoCa = prompt(
-  `Do you want your password to have lower case characters? Y/N`
-).toUpperCase();
-let withUpCa = prompt(
-  `Do you want your password to have upper case characters? Y/N`
-).toUpperCase();
-let withNu = prompt(
-  `Do you want your password to have numbers? Y/N`
-).toUpperCase();
-let withSy = prompt(
-  `Do you want your password to have symbols? Y/N`
-).toUpperCase();
-if (withLoCa == "N" && withUpCa == "N" && withNu == "N" && withSy == "N") {
-  chosenChars += chars.substring(0, 25);
-} else {
-  if (withLoCa == "Y") {
-    chosenChars += chars.substring(0, 25);
-    //chosenChars += chars.charAt(Math.floor(Math.random() * (26 - 0 + 1)) + 0);
-  }
-  if (withUpCa == "Y") {
-    chosenChars += chars.substring(26, 52);
-    //chosenChars += chars.charAt(Math.floor(Math.random() * (52 - 26 + 1)) + 26);
-  }
-  if (withNu == "Y") {
-    chosenChars += chars.substring(53, 62);
-    //chosenChars += chars.charAt(Math.floor(Math.random() * (62 - 52 + 1)) + 52);
-  }
-  if (withSy == "Y") {
-    chosenChars += chars.substring(63, chars.length - 1);
-    //chosenChars += chars.charAt(Math.floor(Math.random() * ((chars.length-1) - 62 + 1)) + 62);
-  }
-}
-for (let counter = 0; counter < passLength; counter++) {
-  password += chosenChars.charAt(
-    Math.floor(Math.random() * ((chosenChars.length - 1) - 0 + 1)) + 0
-  );
-}
-
-alert(password);
-
-// EXERCISE Decir que numeros son primos
-
-//let num = 100;
-//let counter = 0;
-//for (let start = 2, end = 100, isPrime = true; start < end; start++) {
-//  for (let i = 2; i < start && isPrime == true; i++) {
-//    if (start % i == 0) {
-//      console.log(`It's number ${start} not a prime, divisible by: `, i);
-//      isPrime = false;
-// break;
-//    }
-//  }
-//  if (isPrime) {
-//    console.log(`the number ${start} is prime`);
-//  }
-//  {
-//    isPrime = !isPrime;
-//  }
-//}
-
-// EXERCISE Decir que numeros son pares
-
-//for (let num = 1, max = 100; num <= max; num++) {
-//  if (num % 2 == 0) {
-//    console.log(`${num} is an even number`);
-//  } else {
-//    console.log(`${num} is an odd number`);
-//  }
-//}
-
-//for (let num = -1, max = 100, counter = 0; num < max; num++) {
-//  if (num % 2 != 0) {
-//    continue;
-//  }
-//  console.log(`${num}`);
-//  console.log(`iteration ${++counter}`);
-//  console.log("iteration " + ++counter);
-//}
