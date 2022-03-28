@@ -450,7 +450,6 @@ for (let start = 1; start <= end; start++) {
 }
 */
 
-
 /*
 let userValue = prompt("Please enter your value");
 
@@ -459,3 +458,32 @@ for (let num = 1; num <=10; num++) {
 }
 
 */
+
+// DO while
+
+//interactive menu for hex colors
+let option = null;
+let colors = ["red", "green", "blue"];
+do {
+  console.log("Please, choose a color");
+  for (let index = 0; index < colors.length; index++) {
+    console.log(index + 1 + " " + colors[index]);
+  }
+  console.log("Press 0 to leave");
+  option = prompt("Make your choice");
+  switch (option) {
+    case "1":
+      console.log("%cHex code for red: #FF0000", "color:#FF0000");
+      break;
+    case "2":
+      console.log("%cHex code for green: #008000", "color:#008000");
+      break;
+    case "3":
+      console.log("%cHex code for blue: #0000FF", "color:#0000FF");
+      break;
+
+    default:
+      console.log("%cExiting, see you soon!");
+      break;
+  }
+} while (option != null && option != "0");

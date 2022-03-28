@@ -439,42 +439,61 @@ for (let charLoc = 0, count = 0; charLoc <=10; charLoc++, count++) {
 */
 
 // EXERCISE 02
-/*
 
+/*
 let palindrome="no lemon, no melon";
-for (let charLoc = palindrome.length, count = 1; charLoc > 0; charLoc--, count++) {
-  console.log(`${count}. ${palindrome.charAt(charLoc-1)}`);  
+for (let charLoc = 0; charLoc <= palindrome.length-1; charLoc++) {
+  console.log(`${charLoc + 1}. ${palindrome.charAt(charLoc)}`);  
 }
 */
 
 //EXERCISE 03
-/*for (let start = 1; start < 5; start++) {
-  //console.log("****");
-  //console.log("*\n*\n*\n*");
-}*/
+
+//Solucion de Jorge
 
 /*
-for (let counter1 = 0; counter1 < 4; counter1++){ 
-  for (let counter2 = 0; counter2 < 4; counter2++) 
-      console.log(`${counter1+1}. ****`);
+let msg = "";
+let symbols = "";
+let square = parseInt(prompt("Size of the square?"));
+
+for (let i = 0; i < square; i++) {
+  msg = msg + "\n";
+  for (let j = 0; j < square; j++) {
+    msg = msg + "*";
+  }
 }
+console.log(msg);
+*/
+
+
+/*
+let counter = 1;
+let square = "";
+
+while (counter++ <= 4) {
+  square += "****\n";  
+}
+
+console.log(square);
 */
 
 //EXERCISE 04
-/*
-for (let mo=22, tu=21, we=23, th=24, fr=18, sa=17, su=19, average, days; days < 5; days++) {
-  console.log("****");
-}
-*/
 
 /*
-let mo=22, tu=21, we=23, th=24, fr=18, sa=17, su=19;
-  console.log(`${Math.round((mo+tu+we+th+fr+sa+su)/7)}`)
+let avgTemp = 0;
+let counter = 0;
+
+for (
+  let i=18, mar18=21, mar19=23, mar20=24, mar21=18, mar22=17, mar23=19, mar24=19;
+  i < 25;
+  i++, counter++) {
+    avgTemp += eval(`mar${i}`);
+}
+console.log("7 day temperature average: ", Math.floor(avgTemp / counter));
 */
 
 //EXERCISE 05
 /*
-
 let randNum = Math.floor(Math.random() * 10) + 1;
 let chances = 3;
 let userGuess = parseInt(prompt(`Try to guess a number between 1 and 10.`));
@@ -492,13 +511,15 @@ while (chances > 0) {
 }
 */
 
-//EXERCISE 6
 
+//EXERCISE 6
+/*
 let chars = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()`;
 let chosenChars = "";
 let passLength = parseInt(
   prompt(`How many characters will your password have? (Between 8 and 16)`)
 );
+passLength = passLength >= 8 && length <=16 ? length : 8;
 let password = "";
 
 let withLoCa = prompt(
@@ -513,33 +534,41 @@ let withNu = prompt(
 let withSy = prompt(
   `Do you want your password to have symbols? Y/N`
 ).toUpperCase();
-if (withLoCa == "N" && withUpCa == "N" && withNu == "N" && withSy == "N") {
+
+if (withLoCa != "Y" && withUpCa != "Y" && withNu != "Y" && withSy != "Y") {
   chosenChars += chars.substring(0, 25);
 } else {
   if (withLoCa == "Y") {
     chosenChars += chars.substring(0, 25);
-    //chosenChars += chars.charAt(Math.floor(Math.random() * (26 - 0 + 1)) + 0);
   }
   if (withUpCa == "Y") {
     chosenChars += chars.substring(26, 52);
-    //chosenChars += chars.charAt(Math.floor(Math.random() * (52 - 26 + 1)) + 26);
   }
   if (withNu == "Y") {
     chosenChars += chars.substring(53, 62);
-    //chosenChars += chars.charAt(Math.floor(Math.random() * (62 - 52 + 1)) + 52);
   }
   if (withSy == "Y") {
     chosenChars += chars.substring(63, chars.length - 1);
-    //chosenChars += chars.charAt(Math.floor(Math.random() * ((chars.length-1) - 62 + 1)) + 62);
   }
 }
-for (let counter = 0; counter < passLength; counter++) {
+for (let counter = 0, noRepeat; counter < passLength; counter++) {
   password += chosenChars.charAt(
-    Math.floor(Math.random() * ((chosenChars.length - 1) - 0 + 1)) + 0
+    Math.floor(Math.random() * chosenChars.length + 1)
   );
+
+  if (
+    password.charCodeAt(password.length - 1) ==
+    password.charCodeAt(password.length - 2)
+  ) {
+    noRepeat = password.slice(0, -1);
+    password = noRepeat;
+    counter--;
+  }
 }
 
-alert(password);
+alert(`Your password is: ${password} `);
+
+*/
 
 // EXERCISE Decir que numeros son primos
 
