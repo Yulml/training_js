@@ -462,6 +462,8 @@ for (let num = 1; num <=10; num++) {
 // DO while
 
 //interactive menu for hex colors
+
+/*
 let option = null;
 let colors = ["red", "green", "blue"];
 do {
@@ -487,3 +489,318 @@ do {
       break;
   }
 } while (option != null && option != "0");
+*/
+/*
+// Object literal syntax
+let star = {
+  name: "Polaris",
+  constellation: "Ursa Minor",
+  type: "Double/Cepheid",
+  spectralClass: "F7",
+  mag: 2.0,
+};
+
+// Escribe un objeto person, que contenga, nombre, apellidos,
+// edad, dirección{tipoVia, nombreVia, num, cp,localidad},telefono
+
+let person = {
+  name: "John",
+  lastName: "Doe",
+  age: 30,
+  address: {
+    streetType: "Boulevard",
+    streetName: "Larios",
+    num: 53,
+    cp: 54321,
+    location: "Málaga",
+  },
+  phone: "+34 678 543 210",
+};
+
+person.address.location = "Madrid";
+console.log(person);
+
+person.phone = {
+  1: "+34 678 543 210",
+  2: "+34 678 543 211",
+  3: "+34 678 543 212",
+};
+
+console.log(person);
+
+// Crear un objeto llamado login con las propiedades y valores respectivamente.
+// id => Un número hexadecimal
+// state => {logged => verdadero o falso, onLine => verdadero o falso}
+// userName => "nombre"
+// loginAt: => fecha y hora
+
+let login = {
+  id: "0afbc357de69f",
+  state: {
+    logged: false,
+    onLine: false,
+  },
+  userName: "Jane",
+  loginAt: "2022/03/28 18:15:30",
+};
+*/
+// Modifica el objeto person, para que incluya un email y una contraseña
+// Una vez hechos los cambios, pide por prompt ambos datos y modifica el objeto login
+// según estos datos sea o no correctos.
+// alert de bienvenida refiriendo el nombre
+
+// person.email = "john@doe.com";
+// person.password = "1234";
+// console.log(person);
+// let userEmail = prompt("Please, enter your email:");
+// let userPass = prompt("Please, enter your password:");
+
+// if (userEmail == person.email && userPass == person.password) {
+//   login.state.logged = true;
+//   login.state.onLine = true;
+//   let loginInfo = new Date();
+//   let year = loginInfo.getFullYear();
+//   let month = loginInfo.getMonth()+1;
+//   let day = loginInfo.getDate();
+
+//   let hour = loginInfo.getHours();
+//   let minutes = loginInfo.getMinutes();
+//   let seconds = loginInfo.getSeconds();
+//   // loginAt: "2022/03/28 18:15:30",
+//   let completeDate = `${year}/`;
+//   if (month < 10) {
+//     completeDate += `0${month}/`;
+//   } else {
+//     completeDate += `${month}/`;
+//   }
+//   if (day < 10) {
+//     completeDate += `0${day} `;
+//   }else {
+//     completeDate += `${day} `;
+//   }
+//   if (hour<10) {
+//     completeDate += `0${hour}:`;
+//   } else {
+//     completeDate += `${hour}:`;
+//   }
+//   if (minutes<10) {
+//     completeDate += `0${minutes}:`;
+//   } else {
+//     completeDate += `${minutes}:`;
+//   }
+//   if (seconds<10) {
+//     completeDate += `0${seconds}`;
+//   } else {
+//     completeDate += `${seconds}`;
+//   }
+//   login.loginAt = completeDate;
+//   alert(`Welcome ${person.name}, you logged in correctly.`);
+// } else {
+//   alert("Your login data are incorrect.");
+// }
+/*
+let hero = {
+  character: "Punisher",
+  name: "Frank Castle",
+  powers: [
+    "Peak Human Strength",
+    "Unarmed Combat",
+    "Hand-to-Hand Combat",
+    "Superior Marksmanship",
+    "Pain Immunity",
+  ],
+  info: {
+    yearCreated: 1974,
+    powerOrigin: "Military Training",
+    Weapons: ["Handguns", "Rifles", "Shotguns"],
+    didYOuKnow:
+      "Traumatized by horrific events both at home and abroad, Frank Castle becomes The Punisher, using the lethal skills he honed as a Marine to exact violent vengeance on those he deems responsible for the death of his family.",
+  },
+};
+*/
+/*
+let shoppingCart = new Object();
+
+shoppingCart.product1 = new Object();
+shoppingCart.product1.product_id = 0;
+shoppingCart.product1.name = "Nike Air Zoom Pegasus 38";
+shoppingCart.product1.price = 100;
+shoppingCart.product1.quantity = 1;
+shoppingCart.product2 = new Object();
+shoppingCart.product2.product_id = 1;
+shoppingCart.product2.name = "Nike ZoomX Vaporfly Next% 2";
+shoppingCart.product2.price = 100;
+shoppingCart.product2.quantity = 1;
+shoppingCart.product3 = new Object();
+shoppingCart.product3.product_id = 2;
+shoppingCart.product3.name = "Paredes";
+shoppingCart.product3.price = 300;
+shoppingCart.product3.quantity = 1;
+shoppingCart.product4 = new Object();
+shoppingCart.product4.product_id = 3;
+shoppingCart.product4.name = "J'Hayber";
+shoppingCart.product4.price = 800;
+shoppingCart.product4.quantity = 1;
+
+for (let i = 0; i < Object.keys(shoppingCart).length; i++) {
+  for (
+    let j = 0;
+    j < Object.keys(shoppingCart[Object.keys(shoppingCart)[i]]).length;
+    j++
+  ) {
+    console.log(`${Object.keys(shoppingCart[Object.keys(shoppingCart)[i]])[j]}:
+  ${
+    shoppingCart[Object.keys(shoppingCart)[i]][
+      Object.keys(shoppingCart[Object.keys(shoppingCart)[i]])[j]
+    ]
+  }
+  `);
+  }
+}
+
+
+shoppingCart = {​
+0: {​
+product_id:0,
+name:"Nike Air max",
+price:"150$",
+quantity:"1",
+}​,
+1: {​
+product_id:1,
+name:"Nike Air force",
+price:"160$",
+quantity:"5",
+}​,
+2: {​
+product_id:2,
+name:"Nike Air jordan",
+price:"170$",
+quantity:"9",
+}​,
+3: {​
+product_id:3,
+name:"Nike Air",
+price:"180$",
+quantity:"2",
+}​,
+}​;
+for (leti = 0; i < Object.keys(shoppingCart).length; i++) {​
+letid = shoppingCart[i].product_id;
+letname = shoppingCart[i].name;
+console.log("id: ", id, " name: ", name);
+}​
+*/
+/*
+let colors = ["red", "blue", "green"];
+alert(colors[0]);
+colors[2] = "brown";
+colors[3] = "black";
+alert(colors.length);
+colors[colors.length] = "black";
+colors[colors.length] = "white";
+console.log(colors);
+
+
+let checking = ["foo", "bar", "baz", "qux"];
+console.log(Array.from(checking.keys()));
+console.log(Array.from(checking.values()));
+console.log(Array.from(checking.entries()));
+
+let mixedChecking = Array.from(checking.entries());
+console.log(mixedChecking);*/
+/*
+let numbers = [1, 4, 6, 8];
+let sum = 0;
+for (let num of numbers) {
+  sum += num;
+}
+console.log(sum);
+
+let hero = {
+  character: "Punisher",
+  name: "Frank Castle",
+};
+
+for (let key in hero) {
+  console.log(`${key}: ${hero[key]}`);
+}
+
+["Aragorn", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+  console.log(`${item} is at index ${index} in ${array}`);
+});
+[..."Soberano de Angmar en tiempos pasados"].forEach((letter) => {
+  console.log(letter);
+});
+
+
+let numbers = [1, 2, 3];
+let result = numbers.map((item, index, array) => item *2);
+console.log(result);
+
+let numbers = [15, 10, 5, 0,-5, -10, -15];
+let result = numbers.filter(x => x < 5);
+console.log(result);
+
+
+
+
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers.every((item, index, array) => item > 2));
+console.log(numbers.some((item, index, array) => item > 2));
+
+
+let numbers = [1, 2, 3, 4, 5];
+console.log(result);
+let result = numbers.reduce((accum, item, index, array) => accum + item, 0);
+//let results = numbers.reduceRight((accum, item, index, array) => accum + item, 0);
+//console.log(results);
+*/
+
+/*
+//Nested arrays
+let calendar = new Array(5);
+for (let i = 0; i < calendar.length; i++) {
+  calendar[i] = new Array(7);
+}
+
+//Initialize the array
+for (let row = 0, day = 1; row < calendar.length; row++) {
+  for (let col = 0; col < calendar[row].length;col++) {
+    if (day < 31) {
+      calendar[row][col] = day++;
+    } else {
+      calendar[row][col] = day;
+      day = 1;
+    }
+  }
+}
+console.log(calendar);
+*/
+
+//const sum = function (num1, num2) {
+//  return num1 + num2;
+//}
+
+// sayHello("my friend", "today will be a great day");
+//const sayHello = function (name, message) {   ---> Error ya que const no se eleva
+// function sayHello(name, message) {
+//   console.log(`Hello ${name}, ${message}`);
+// }
+
+// const sum = (num1, num2) => {
+//   return num1 + num2;
+// }
+
+// const square = x => x * x;
+// console.log(square(4));
+
+// const exponential = x => x * x * x;
+// console.log(exponential(4));
+
+
+// function sum(num1, num2) {
+//    return num1 + num2;
+//    console.log("Hello world"); // no se mostrara
+// }
+// alert(sum(2,2));
