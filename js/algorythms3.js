@@ -8,7 +8,7 @@ console.log(`min value: ${Math.min(...twentyRand)} \nmax value: ${Math.max(...tw
 */
 // EXCERSIZE 02 
 // I really don't know where to put the function in this one
-
+/*
 if (new Date().getHours() < 12) {
   alert("Buenos días");
 } else if (new Date().getHours() < 21) {
@@ -16,8 +16,27 @@ if (new Date().getHours() < 12) {
 } else {
   alert("Buenas noches");
 }
-
+*/
 // EXCERSIZE 03
+
+function randomHexColor() {
+    color = "#";
+    const colorCodes = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F",];
+    for (let j = 0; j < 6; j++) {
+      let index = Math.floor(Math.random() * colorCodes.length);
+      color += colorCodes[index];
+    }
+    return color;
+  }
+  
+  let color;
+  for (let i = 0; i < 10; i++) {
+    randomHexColor();
+    console.log(`%cHex code for color number ${i+1}: ${color}`, `color:${color}`);
+  }
+
+// Shorter method hex code generation. 16777215 is the maximum value for RGB color white. But with the other method I get to use a function.
+// const randomColor = Math.floor(Math.random()*16777215).toString(16); investigar o preguntar
 
 // EXCERSIZE 04
 
