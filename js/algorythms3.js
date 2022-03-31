@@ -1,13 +1,21 @@
 // EXCERSIZE 01
-
+/*
 let num1 = parseInt(prompt(`Please insert the minimum numerical limit`));
 let num2 = parseInt(prompt(`Please insert the maximum numerical limit`));
 const randNum = () => Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
-let twentyRand = Array.from({length: 20}, () => randNum()); // I could put the randomizer here instead of inside a function and make the code 1 line shorter.
+let twentyRand = Array.from({ length: 20 }, () => randNum()); // I could put the randomizer here instead of inside a function and make the code 1 line shorter.
 console.log(`min value: ${Math.min(...twentyRand)} \nmax value: ${Math.max(...twentyRand)}`);
+*/
+// EXCERSIZE 02 
+// I really don't know where to put the function in this one
 
-
-// EXCERSIZE 02
+if (new Date().getHours() < 12) {
+  alert("Buenos días");
+} else if (new Date().getHours() < 21) {
+  alert("Buenas tardes");
+} else {
+  alert("Buenas noches");
+}
 
 // EXCERSIZE 03
 
