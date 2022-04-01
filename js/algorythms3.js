@@ -311,7 +311,10 @@ const exercise6 = () => {
   // I DID NOT WRITE THIS, I ONLY MODIFIED IT
 
   let timerId = setInterval(() => randQuote(), 10000); // repeat with the interval of 10 seconds
-  setTimeout(() => { clearInterval(timerId); randQuote();}, 120000);  // after 120 seconds stop
+  setTimeout(() => {
+    clearInterval(timerId);
+    randQuote();
+  }, 120000); // after 120 seconds stop
 
   //window.setInterval(randQuote, 10000); //se ejecuta (en este caso la funcion randQuote) continuamente cada 10 segundos. Incluso la primera ejecución ocurre tras 10 segundos de espera
   //window.setTimeout(randQuote, 10000); //solo se ejecuta una vez tras esperar 10 segundos
