@@ -89,38 +89,71 @@ exercise3();
 // EXCERSIZE 04
 /*
 const exercise4 = () => {
-const idChars = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
-let userId = prompt("Please enter your DNI to validate");
-let idSum="";
-for (let i = 0; i < userId.length-1; i++) {
-  idSum += userId.charAt(i);
-}
-if (userId == idSum + (idChars[parseInt(idSum)%23])) {
-  console.log(`Valid DNI`);
-} else {
-  console.log(`The entered data is wrong`);
+  const idChars = [
+    "T",
+    "R",
+    "W",
+    "A",
+    "G",
+    "M",
+    "Y",
+    "F",
+    "P",
+    "D",
+    "X",
+    "B",
+    "N",
+    "J",
+    "Z",
+    "S",
+    "Q",
+    "V",
+    "H",
+    "L",
+    "C",
+    "K",
+    "E",
+  ];
+  let userId = prompt("Please enter your DNI to validate");
+  let idSum = userId.substring(0, userId.length - 1);
+  userId == idSum + idChars[parseInt(idSum) % 23]
+    ? alert(`Valid DNI`)
+    : alert(`The entered data is wrong`);
+
+    const dniGenerator = () => {
+      let randomNumber = Math.floor(
+        Math.random() * (100000000 - 10000000) + 10000000
+      );
+      randomNumber += idChars[randomNumber % 23];
+      return randomNumber;
+    };
+    for (let index = 0; index < 100; index++) {
+      console.log(dniGenerator());
+    };
 };
 exercise4();
 */
+
 // EXCERSIZE 05
-/*
+
 const exercise5 = () => {
-  //const letters = ["B","C","D","F","G","H","J","K","L","M","N","P","R","S","T","V","W","X","Y","Z"];
+  const letters = ["B","C","D","F","G","H","J","K","L","M","N","P","R","S","T","V","W","X","Y","Z"];
   let howMany = parseInt(prompt("How many number plates do you want?"));
   let arrOfPlates = [];
   function genPlates() {
     let plateNum = [];
-    let index;
     do {
-      index = Math.floor(Math.random() * 10);
+      let index = Math.floor(Math.random() * 10);
       plateNum.push(index);
     } while (plateNum.length < 4);
     do {
-      index = letters[Math.floor(Math.random() * letters.length)];
+      let index = letters[Math.floor(Math.random() * letters.length)];
       plateNum.push(index);
     } while (plateNum.length < 7);
+    plateNum.splice(4, 0, " ");
     arrOfPlates.push(plateNum.join(""));
   }
+  
   do {
     genPlates();
   } while (arrOfPlates.length < howMany);
@@ -128,7 +161,7 @@ const exercise5 = () => {
 };
 
 exercise5();
-*/
+
 // EXCERSIZE 06
 /*
 const exercise6 = () => {
@@ -311,5 +344,44 @@ guardar cartas en array y comparar si es mayor o menor la posicion en el array, 
 */
 // EXCERSIZE 09
 /*
-pasar todo a uppercase -> rueda de alfabeto -> de las Z si avanza 3 posiciones seria la D
+const alphabet =[];
+for (let i = 97; i <= 122; i++) {
+  alphabet.push(String.fromCharCode(i));
+};
+  let encodedText = "";
+
+function encode() {
+
+  for (let j = 0; j < rawText.length; j++) {
+    encodedText += String.fromCharCode(rawText.charCodeAt(j+3));
+    
+  }
+  return encodedText;
+};
+function decode (){};
+
+
+rawText = prompt("Please insert your text").toLowerCase;
+coding = prompt("Encode or Decode?").toLowerCase;
+coding == "encode" ? encode() : "decode" ? decode(): alert("Refresh you dumbo");
+console.log(encodedText);
+//pasar todo a lower ascii 97-122 lowercase-> rueda de alfabeto -> de las Z si avanza 3 posiciones seria la D
+
+
+console.log(alphabet);
 */
+//booleano true or false
+//Is the text encoded? Y/N
+//
+
+//what is the text?
+//function encode(true, "string");
+//function decode();
+
+//recorrer string alphabet e ir rellenando nuevo texto con posicion+desplazamiento
+
+//cuando llega al final
+
+//if posicion + desplazamiento > 122
+//  then diferencia = posicion + desplazamiento - 122
+//  rellenar arraytexto = arraytexto += diferencia
