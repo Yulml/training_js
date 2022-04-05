@@ -135,7 +135,7 @@ exercise4();
 */
 
 // EXCERSIZE 05
-
+/*
 const exercise5 = () => {
   const letters = ["B","C","D","F","G","H","J","K","L","M","N","P","R","S","T","V","W","X","Y","Z"];
   let howMany = parseInt(prompt("How many number plates do you want?"));
@@ -161,9 +161,9 @@ const exercise5 = () => {
 };
 
 exercise5();
-
+*/
 // EXCERSIZE 06
-/*
+
 const exercise6 = () => {
   const randQuote = () => {
     const quotes = Array.of(
@@ -296,26 +296,26 @@ const exercise6 = () => {
       )
     );
     const randNums = () => Math.floor(Math.random() * quotes.length);
-    console.log(quotes[randNums()]); preguntar si se puede referenciar un indice de un array dentro de un array sin guardarlo en variable. Por ejemplo, mostrar solo los valores de la cita en sí y el personaje.
-
-    console.log(quotes[randNums()][2]); para sacar del arrayº interior, en este caso el actor
+    //console.log(quotes[randNums()]);
+    let randomQuote = quotes[randNums()];
+    console.log(`Quote: ${randomQuote[0]}\nCharacter: ${randomQuote[1]}\nActor: ${randomQuote[2]}\nMovie: ${randomQuote[3]}`);// para sacar del array interior, en este caso el actor
   };
 
-   This method I found through a search engine solves my problems and I mostly understand it,
-   I DID NOT WRITE THIS, I ONLY MODIFIED IT
+  // This method I found through a search engine solves my problems and I mostly understand it,
+  // I DID NOT WRITE THIS, I ONLY MODIFIED IT
 
-  let timerId = setInterval(() => randQuote(), 10000);  repeat with the interval of 10 seconds
+  let timerId = setInterval(() => randQuote(), 10000); // repeat with the interval of 10 seconds
   setTimeout(() => {
     clearInterval(timerId);
     randQuote();
-  }, 120000);  after 120 seconds stop
+  }, 120000); // after 120 seconds stop
 
-  window.setInterval(randQuote, 10000); se ejecuta (en este caso la funcion randQuote) continuamente cada 10 segundos. Incluso la primera ejecución ocurre tras 10 segundos de espera
-  window.setTimeout(randQuote, 10000); solo se ejecuta una vez tras esperar 10 segundos
+  // window.setInterval(randQuote, 10000); // se ejecuta (en este caso la funcion randQuote) continuamente cada 10 segundos. Incluso la primera ejecución ocurre tras 10 segundos de espera
+  // window.setTimeout(randQuote, 10000); // solo se ejecuta una vez tras esperar 10 segundos
 };
 
 exercise6();
-*/
+
 // EXCERSIZE 07
 /*
 const exercise7 = () => {
@@ -344,44 +344,73 @@ guardar cartas en array y comparar si es mayor o menor la posicion en el array, 
 */
 // EXCERSIZE 09
 /*
-const alphabet =[];
-for (let i = 97; i <= 122; i++) {
-  alphabet.push(String.fromCharCode(i));
-};
-  let encodedText = "";
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-function encode() {
+let newalpha = "";
 
-  for (let j = 0; j < rawText.length; j++) {
-    encodedText += String.fromCharCode(rawText.charCodeAt(j+3));
-    
+let rawText = prompt("Please insert your text").toLowerCase().replace(/\s+/g, '');
+
+let coding = prompt("Encode or Decode?").toLowerCase().replace(/\s+/g, '');
+
+let offsetting = parseInt(prompt("Cypher key?"));
+
+ 
+
+function shift(n){
+
+  for (let i = 0; i < alphabet.length; i++){
+
+    let offset = (i + n) % alphabet.length;
+
+    newalpha += alphabet[offset];
+
   }
-  return encodedText;
-};
-function decode (){};
 
+}
 
-rawText = prompt("Please insert your text").toLowerCase;
-coding = prompt("Encode or Decode?").toLowerCase;
-coding == "encode" ? encode() : "decode" ? decode(): alert("Refresh you dumbo");
-console.log(encodedText);
-//pasar todo a lower ascii 97-122 lowercase-> rueda de alfabeto -> de las Z si avanza 3 posiciones seria la D
+shift(offsetting);
 
+ 
 
-console.log(alphabet);
+function encode(message){
+
+  let result = "";
+
+  message = message.toLowerCase();
+
+  for (let i = 0; i < message.length; i++){
+
+      let index = alphabet.indexOf(message[i]);
+
+      result += newalpha[index];
+
+  }
+
+  return result;
+
+}
+
+ 
+
+function decode(message){
+
+  let result = "";
+
+  message = message.toLowerCase();
+
+  for (let i = 0; i < message.length; i++){
+
+      let index = newalpha.indexOf(message[i]);
+
+      result += alphabet[index];
+
+  }
+
+  return result;
+
+}
+
+ 
+
+coding == "encode" ? console.log(encode(rawText)) : coding == "decode" ? console.log(decode(rawText)) : console.log("Type it correctly you dumbo");
 */
-//booleano true or false
-//Is the text encoded? Y/N
-//
-
-//what is the text?
-//function encode(true, "string");
-//function decode();
-
-//recorrer string alphabet e ir rellenando nuevo texto con posicion+desplazamiento
-
-//cuando llega al final
-
-//if posicion + desplazamiento > 122
-//  then diferencia = posicion + desplazamiento - 122
-//  rellenar arraytexto = arraytexto += diferencia
