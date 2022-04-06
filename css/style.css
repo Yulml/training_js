@@ -51,3 +51,8 @@ div {
 .disappear {
     opacity: 0;
 }
+
+.margin {
+  width: 80%;
+  margin: 2em auto;
+}
