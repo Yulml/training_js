@@ -163,7 +163,7 @@ const exercise5 = () => {
 exercise5();
 */
 // EXCERSIZE 06
-
+/*
 const exercise6 = () => {
   const randQuote = () => {
     const quotes = Array.of(
@@ -301,21 +301,16 @@ const exercise6 = () => {
     console.log(`Quote: ${randomQuote[0]}\nCharacter: ${randomQuote[1]}\nActor: ${randomQuote[2]}\nMovie: ${randomQuote[3]}`);// para sacar del array interior, en este caso el actor
   };
 
-  // This method I found through a search engine solves my problems and I mostly understand it,
-  // I DID NOT WRITE THIS, I ONLY MODIFIED IT
-
-  let timerId = setInterval(() => randQuote(), 10000); // repeat with the interval of 10 seconds
+  let chronoId = setInterval(() => randQuote(), 10000);
   setTimeout(() => {
-    clearInterval(timerId);
+    clearInterval(chronoId);
     randQuote();
-  }, 120000); // after 120 seconds stop
+  }, 120000);
 
-  // window.setInterval(randQuote, 10000); // se ejecuta (en este caso la funcion randQuote) continuamente cada 10 segundos. Incluso la primera ejecución ocurre tras 10 segundos de espera
-  // window.setTimeout(randQuote, 10000); // solo se ejecuta una vez tras esperar 10 segundos
 };
 
 exercise6();
-
+*/
 // EXCERSIZE 07
 /*
 const exercise7 = () => {
@@ -337,6 +332,85 @@ const exercise7 = () => {
 exercise7();
 */
 // EXCERSIZE 08
+
+const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"];
+const suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
+const deck = [];
+let player1Card = null;
+let player2Card = null;
+
+function buildDeck() {
+	let card = function(value, suit) {
+		this.name = value + " of " + suit;
+		this.value = value;
+		this.suit = suit;
+
+		return {
+			Name: this.name,
+			Value: this.value,
+			Suit: this.suit
+		}
+	}
+	for (let i=0; i<suits.length; i++) {
+		for (let j=0; j<values.length; j++) {
+			deck.push(card(values[j], suits[i]));
+		}
+	}	
+}
+buildDeck()
+
+
+function dealCardsToPlayers() {
+	let card1 = Math.floor(Math.random()*deck.length)
+	player1Card = deck[card1];
+		deck.splice(card1,1);
+	let card2 = Math.floor(Math.random()*deck.length)
+	player2Card = deck[card2];
+		deck.splice(card2, 1);	 
+	return deck;
+
+}
+dealCardsToPlayers()
+
+
+function announceCards() {
+	console.log(`Player 1 is showing the ${player1Card.Name}`)
+	console.log(`Player 2 is showing the ${player2Card.Name}`)
+	}
+announceCards()
+
+
+function cardToRank() {
+    player1Rank = values.indexOf(player1Card.Value) + 2;
+    player2Rank = values.indexOf(player2Card.Value) + 2;
+}
+
+cardToRank();
+
+
+function announceWinner() {
+	if (player1Rank > player2Rank) {
+		console.log("Player 1 wins!")
+	} else {console.log("Player 2 wins!")}
+}
+
+announceWinner()
+
+function returnCardsToDeck() {
+	deck.push(player1Card);
+	deck.push(player2Card);
+}
+
+returnCardsToDeck()
+
+
+function playGame() {
+  dealCardsToPlayers();
+  announceCards();
+  announceWinner();
+  returnCardsToDeck();
+}
+
 /*
 DO WHILE ES IDONEO
 
@@ -345,72 +419,37 @@ guardar cartas en array y comparar si es mayor o menor la posicion en el array, 
 // EXCERSIZE 09
 /*
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
-
-let newalpha = "";
-
+let newAlpha = "";
 let rawText = prompt("Please insert your text").toLowerCase().replace(/\s+/g, '');
-
 let coding = prompt("Encode or Decode?").toLowerCase().replace(/\s+/g, '');
-
 let offsetting = parseInt(prompt("Cypher key?"));
 
- 
-
-function shift(n){
-
-  for (let i = 0; i < alphabet.length; i++){
-
+function shift(n) {
+  for (let i = 0; i < alphabet.length; i++) {
     let offset = (i + n) % alphabet.length;
-
-    newalpha += alphabet[offset];
-
+    newAlpha += alphabet[offset];
   }
-
 }
-
 shift(offsetting);
 
- 
-
-function encode(message){
-
+function encode(message) {
   let result = "";
-
   message = message.toLowerCase();
-
-  for (let i = 0; i < message.length; i++){
-
-      let index = alphabet.indexOf(message[i]);
-
-      result += newalpha[index];
-
+  for (let i = 0, index; i < message.length; i++) {
+    result += newAlpha[alphabet.indexOf(message[i])];
   }
-
   return result;
-
 }
 
- 
-
-function decode(message){
-
+function decode(message) {
   let result = "";
-
   message = message.toLowerCase();
-
-  for (let i = 0; i < message.length; i++){
-
-      let index = newalpha.indexOf(message[i]);
-
-      result += alphabet[index];
-
+  for (let i = 0; i < message.length; i++) {
+    let index = newAlpha.indexOf(message[i]);
+    result += alphabet[index];
   }
-
   return result;
-
 }
-
- 
 
 coding == "encode" ? console.log(encode(rawText)) : coding == "decode" ? console.log(decode(rawText)) : console.log("Type it correctly you dumbo");
 */
