@@ -1,17 +1,19 @@
 :root {
   box-sizing: border-box;
+  font-size: fSizes(initial);
 }
 
 *,
-::before,
-::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
+::after,
+::before {
   border: 0;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: inherit;
 }
 
 body {
-  background-color: green;
+  background-image: linear-gradient(to right, white, #b5b5b5);
 }
 /*# sourceMappingURL=style.css.map */
