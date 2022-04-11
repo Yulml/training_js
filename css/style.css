@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500;700&family=Lato:wght@300;400;700&family=Smooch+Sans:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&family=Lato:wght@100;300;400;700&family=Open+Sans&family=Roboto&family=Smooch+Sans:wght@100;300;400;700&display=swap");
 :root {
   box-sizing: border-box;
   font-size: fSizes(initial);
@@ -15,14 +15,14 @@
 }
 
 body {
-  width: 100%;
-  height: 100vh;
   font-family: "Lato", sans-serif;
   background: #200122;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #200122, #6f0000);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  height: 100vh;
 }
 
 h1 {
@@ -31,10 +31,10 @@ h1 {
 }
 
 .main {
-  background-color: white;
   width: 80%;
   margin: 10% auto;
   padding: 2em;
+  background-color: #fff;
 }
 
 .main .container {
@@ -60,9 +60,9 @@ h1 {
   background-color: #0d6efd;
   min-height: 60px;
   font-size: 1.1rem;
-  border-top-right-radius: 0.3rem;
-  border-bottom-right-radius: 0.3rem;
+  border-radius: 0 0.3rem 0.3rem 0;
   transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 
 .main label div:hover {
@@ -77,27 +77,26 @@ h1 {
   transform: translateX(10px);
 }
 
-.main input {
+.main label input {
   display: block;
   width: 80%;
   background-color: #bee5e3;
   padding: 0.5em;
   min-height: 60px;
   font-size: 1.1rem;
-  border-top-left-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem;
+  border-radius: 0.3rem 0 0 0.3rem;
   transition: all 0.15s ease-in-out;
 }
 
-.main input::placeholder {
+.main label input::placeholder {
   color: #292a2b;
 }
 
-.main input:focus {
+.main label input:focus {
   border: 5px solid transparent;
   border-radius: 0.3rem;
-  background-color: white;
-  box-shadow: 0 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  background-color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 .main .alert {
@@ -111,14 +110,14 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  transition: all 0, 3s linear;
+  transition: all .3s linear;
 }
 
-.main .alert .fa-square-xmark {
-  font-size: 1.9rem;
+.main .alert .fa-rectangle-xmark {
+  font-size: 1.5rem;
 }
 
-.main .alert .fa-square-xmark:hover {
+.main .alert .fa-rectangle-xmark:hover {
   color: #292a2b;
 }
 
@@ -131,7 +130,7 @@ table {
 }
 
 table tr {
-  background-color: #dcd8d8;
+  background-color: #f6f6f6;
 }
 
 table tr:nth-of-type(odd) {
@@ -140,32 +139,31 @@ table tr:nth-of-type(odd) {
 
 table th {
   background-color: #2980b9;
-  padding: 0.5em;
+  padding: .5em;
   font-weight: 700;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   text-transform: capitalize;
 }
 
-table th th:first-child {
-  border-top-left-radius: 0.3rem;
+table th:first-child {
+  border-radius: .3rem 0 0 0;
 }
 
-table th th:last-child {
-  border-top-right-radius: 0.3rem;
+table th:last-child {
+  border-radius: 0 .3rem 0 0;
 }
 
 table td {
   font-family: "Fredoka", sans-serif;
-  padding: 0.8em;
+  padding: .8em;
 }
 
 table td:first-child {
   width: 70%;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
 }
 
-table td:nth-child(2),
-table td:nth-child(3) {
+table td:nth-child(2), table td:nth-child(3) {
   width: 15%;
   font-size: 1.1rem;
 }
@@ -173,7 +171,8 @@ table td:nth-child(3) {
 table .fa-2x {
   font-size: 1.3em;
   color: #ffc107;
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
 }
 
 table .fa-2x:hover {
@@ -190,9 +189,10 @@ table td:nth-child(3) .fa-2x:hover {
 }
 
 table .fa-circle-check {
-  color: green;
-  margin-right: 15px;
-  transition: all 0.3s ease-in-out;
+  color: #198754;
+  margin: 0 15px 0 0;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
 }
 
 table .fa-circle-check:hover {
@@ -200,18 +200,18 @@ table .fa-circle-check:hover {
   transform: scale(1.2);
 }
 
-.dismissable {
+.dismissible {
   opacity: 0 !important;
   height: 0 !important;
   padding: 0 !important;
-  transition: all 0.3s linear;
+  transition: all .3s linear;
 }
 
 .editable {
-  background-color: white;
+  background-color: #fff;
   display: inline-block;
   padding: .3em;
   border-radius: .3rem;
-  margin-top: .3em;
+  margin: .3em 0 0 0;
 }
 /*# sourceMappingURL=style.css.map */
