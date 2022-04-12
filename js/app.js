@@ -1,3 +1,4 @@
+/*
 // let nav = document.querySelector("nav");
 // console.log(nav);
 // let active = document.querySelector(".active");
@@ -65,3 +66,44 @@ paragraph.setAttribute("title","This is a paragraph");
 
 console.log(paragraph.getAttribute("class"));
 console.log(paragraph.style.cssText);
+
+
+
+document.body.addEventListener("click", () => alert("This is the body"));
+document.querySelector("section").addEventListener("click", () => alert("This is the section"));
+document.querySelector("div").addEventListener("click", () => alert("This is the div"));
+
+
+
+console.log(document.forms[1]);
+document.forms[1].onsubmit = (e) => e.preventDefault();
+
+
+// JS ejemplo de Drag&Drop
+let div1 = document.querySelector("#Uno");
+let div2 = document.querySelector("#Dos");
+
+div1.addEventListener("dragstart", () => {
+  console.log("Div 1 Dispara dragstart");
+});
+div1.addEventListener("drag", () => {
+  console.log("Div 1 Dispara drag");
+});
+div1.addEventListener("dragend", () => {
+  console.log("Div 1 Dispara dragend");
+});
+div2.addEventListener("dragenter", (e) => {
+  console.log("Div 2 Dispara dragenter");
+  e.preventDefault();
+});
+div2.addEventListener("dragover", (e) => {
+  console.log("Div 2 Dispara dragover");
+  e.preventDefault();
+});
+div2.addEventListener("drop", () => {
+  console.log("Div 2 Dispara drop");
+});
+div2.addEventListener("dragleave", () => {
+  console.log("Div 2 Dispara dragleave");
+});
+*/

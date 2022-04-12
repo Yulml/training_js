@@ -19,6 +19,7 @@
   --cyan: #0dcaf0;
   --dark: #292a2b;
 }
+/*
 section {
   display: flex;
   justify-content: space-around;
@@ -56,3 +57,45 @@ div {
   width: 80%;
   margin: 2em auto;
 }
+
+//CSS ejemplo de preventdefault
+
+body {
+  background-color: black;
+  padding: 2em;
+}
+section {
+  background-color: green;
+  min-height: 20vh;
+  width: 60%;
+  padding: 2em;
+}
+div {
+  background-color: blue;
+  min-height: 10vh;
+  width: 40%;
+  padding: 2em;
+}
+
+//CSS ejemplo de drag&drop
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 3em;
+}
+
+#Uno {
+  background-color: var(--blue);
+}
+
+#Dos {
+  background-color: var(--green);
+}
+
+div {
+  width: 30%;
+  height: 20vh;
+}
+*/
